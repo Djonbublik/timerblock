@@ -19,6 +19,15 @@ const BlockContainer = styled.div<{ color: string }>`
   justify-content: center;
   margin: 10px;
   cursor: pointer;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-radius: 10px; /* Закругленные углы */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тени */
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.05); /* Увеличение при наведении */
+  }
 `;
 
 const Block: React.FC<BlockProps> = ({

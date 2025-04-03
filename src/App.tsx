@@ -4,11 +4,25 @@ import Block from "./components/Block";
 import Controls from "./components/Controls";
 import { getRandomColor, getRandomTime } from "./utils/helpers";
 import { sortBlocks } from "./utils/sortUtils";
+
 const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  background-color: #e0e4e8;
+  min-height: 100vh;
+`;
+
+const BlocksContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Увеличим расстояние между блоками */
+  justify-content: center;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 `;
 
 export interface BlockData {
@@ -143,7 +157,7 @@ const App: React.FC = () => {
         getSortButtonColor={getSortButtonColor}
         sortMode={sortMode}
       />
-      <div style={{ display: "flex", flexWrap: "wrap" }}>
+      <BlocksContainer>
         {blocks.map((block) => (
           <Block
             key={block.id}
@@ -155,7 +169,7 @@ const App: React.FC = () => {
             onReset={() => resetBlock(block.id)}
           />
         ))}
-      </div>
+      </BlocksContainer>
     </AppContainer>
   );
 };

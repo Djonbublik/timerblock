@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import SortButton from "./SortButton"; // Импортируйте обновленный компонент
 
 interface ControlsProps {
   colorInput: string;
@@ -18,12 +19,24 @@ const ControlsContainer = styled.div`
 
 const Button = styled.button`
   margin: 0 10px;
-  background-color: gray;
-  color: black;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #0056b3;
+  }
 `;
 
 const Input = styled.input`
   margin-right: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 `;
 
 const Controls: React.FC<ControlsProps> = ({
@@ -45,18 +58,15 @@ const Controls: React.FC<ControlsProps> = ({
       />
       <Button onClick={onAddBlock}>Add Block</Button>
       <Button onClick={onShuffleBlocks}>Shuffle Blocks</Button>
-      <Button
-        onClick={onSortModeChange}
-        style={{ backgroundColor: getSortButtonColor(), color: "black" }} // Set text color to black
-      >
-        Sort by Time (
-        {sortMode === "none"
-          ? "None"
-          : sortMode === "asc"
-          ? "Ascending"
-          : "Descending"}
-        )
-      </Button>
+      <SortButton bgColor={getSortButtonColor()} onClick={onSortModeChange}>
+        {`Sort by Time (${
+          sortMode === "none"
+            ? "None"
+            : sortMode === "asc"
+            ? "Ascending"
+            : "Descending"
+        })`}
+      </SortButton>
     </ControlsContainer>
   );
 };

@@ -1,11 +1,53 @@
+handleSorthandleSort.App {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
+}
+
+.controls {
+  margin-bottom: 20px;
+}
+
+.blocks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.block {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
   justify-content: center;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out; /* Анимация */
 }
 
+.block-enter {
+  opacity: 0;
+  transform: scale(0.5);
 }
 
+.block-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 300ms, transform 300ms;
 }
+
+.block-exit {
+  opacity: 1;
+  transform: scale(1);
 }
+
+.block-exit-active {
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.block-move {
+  transition: transform 0.3s ease-in-out;
 }
