@@ -69,18 +69,7 @@ const App: React.FC = () => {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
-
-  const addBlock = (color: string, initialTime: number) => {
-    const newBlock = {
-      id: Date.now(),
-      color,
-      initialTime,
-      currentTime: initialTime,
-    };
-    const newBlocks = [...blocks, newBlock];
-    setBlocks(sortBlocks(newBlocks, sortMode));
-  };
+  }, [sortMode]);
 
   const removeBlock = (id: number) => {
     setBlocks((prevBlocks) => prevBlocks.filter((block) => block.id !== id));
