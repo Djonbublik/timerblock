@@ -69,7 +69,7 @@ const App: React.FC = () => {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [sortMode]);
+  }, []);
 
   const removeBlock = (id: number) => {
     setBlocks((prevBlocks) => prevBlocks.filter((block) => block.id !== id));
