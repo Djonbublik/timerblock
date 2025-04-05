@@ -104,7 +104,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     setBlocks((prevBlocks) => sortBlocks(prevBlocks, sortMode));
-  }, [sortMode]);
+  }, [sortMode]); // Добавление sortMode в массив зависимостей
 
   const handleSortModeChange = () => {
     if (sortMode === "none") {
