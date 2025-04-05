@@ -5,9 +5,9 @@
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.126",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.14.0",
     "@types/react-dom": "^19.1.1",
     "@types/styled-components": "^5.1.34",
     "jsonc-parser": "^3.3.1",
@@ -17,8 +17,7 @@
     "react-scripts": "^5.0.1",
     "resolve-url-loader": "^5.0.0",
     "styled-components": "^6.1.17",
-    "typescript": "^3.9.10",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^4.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -47,7 +46,8 @@
   "devDependencies": {
     "@testing-library/react": "^16.3.0",
     "@types/react": "^19.1.0",
-    "@types/testing-library__react": "^10.0.1",
-    "gh-pages": "^6.3.0"
+    "@types/testing-library__react": "^10.2.0",
+    "gh-pages": "^6.3.0",
+    "typescript": "^3.9.10"
   }
 }
